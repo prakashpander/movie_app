@@ -114,7 +114,7 @@ const UserPage = () => {
             }} />
 
           <div className='flex items-center rounded-tr rounded-br'>
-            <button ref={clearRef} className='text-white  px-3 rounded-full cursor-pointer' onClick={clearSearch}><RxCross2 className='text-2xl'/></button>
+            <button ref={clearRef} className='text-white  px-3 rounded-full cursor-pointer hidden' onClick={clearSearch}><RxCross2 className='text-2xl'/></button>
 
           <button className=' text-white bg-[#3d3d40] font-medium px-2 sm:px-5 py-1.5 rounded-tr rounded-br cursor-pointer' onClick={searchBtn}>Search</button>
           </div>
