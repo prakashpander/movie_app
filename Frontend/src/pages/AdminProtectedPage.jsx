@@ -38,7 +38,15 @@ const AdminProtectedPage = ({ children }) => {
 
     if (isLoading) {
         return (
-            <div>Loading...</div>
+            <div className="min-h-screen bg-black flex flex-col items-center justify-center">
+
+                <div className="w-12 h-12 border-4 border-gray-700 border-t-white rounded-full animate-spin"></div>
+
+                <p className="mt-4 text-gray-300 text-sm md:text-base tracking-wide">
+                    Checking authentication...
+                </p>
+
+            </div>
         )
     }
     return (

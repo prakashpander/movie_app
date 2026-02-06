@@ -32,7 +32,7 @@ axiosInstance.interceptors.response.use(
       localStorage.removeItem("adminToken");
       localStorage.removeItem("userToken");
 
-      window.location.href = "/login";
+      window.location.href = "/adminlogin";
       return;
     }
 
