@@ -78,22 +78,30 @@ const UserPage = () => {
   if (isLoading) {
     return (
       <div className='h-full bg-[rgb(42,44,56)]'> 
-        <div className='flex mr-8 ml-8 items-center gap-5 justify-between pt-6 pb-6'>
-          <div className=' flex gap-2'>
-            <input disabled value='' className='border-2 border-gray-500 bg-white rounded-lg p-1 w-xs' type="text" placeholder='Search movie...' />
-            <button disabled className=' bg-[#3f414d] text-white border-2 border-gray-500 font-medium px-5 py-1 rounded-lg cursor-pointer'>Search</button>
+         <div className='flex flex-wrap items-center gap-2 sm:gap-5 justify-between p-5'>
+        <div className='bg-[rgb(27,30,36)] flex items-center rounded'>
+            <IoIosSearch className='text-gray-200 ml-2 text-xl'/>
+          <input className='text-gray-200 disabled outline-none rounded-lg p-1 w-auto sm:w-xs ' type="text" placeholder='Avatar movie...' value="" />
+
+          <div className='flex items-center rounded-tr rounded-br'>
+            <button ref={clearRef} className='text-white  px-3 rounded-full cursor-pointer hidden disabled'><RxCross2 className='text-2xl'/></button>
+
+          <button className=' text-white bg-[#3d3d40] font-medium px-2 sm:px-5 py-1.5 rounded-tr rounded-br cursor-pointer disabled'>Search</button>
           </div>
-          <div>
-            <select disabled value='' className='w-40 border-2 border-gray-500 text-white rounded-lg p-1 cursor-pointer bg-[#3f414d]'>
-              <option disabled className=''>sort by</option>
-              <option value="all">All movies</option>
-              <option value="release">Release date</option>
-              <option value="rating">Rating</option>
-              <option value="latest">Latest</option>
-              <option value="runtime">Runtime</option>
-            </select>
-          </div>
+
         </div>
+
+        <div>
+          <select className='sm:w-40 px-2 py-2 pr-4 outline-none text-white rounded-lg p-1 cursor-pointer bg-[rgb(27,30,36)] disabled'
+            value="" >
+            <option value="all">All movies</option>
+            <option value="release">Release date</option>
+            <option value="rating">Rating</option>
+            <option value="latest">Latest</option>
+            <option value="runtime">Runtime</option>
+          </select>
+        </div>
+      </div>
         <div>
           <h1 className="text-3xl font-bold text-white mt-2 ml-6 pb-3">🎬 Movies</h1>
         </div>
@@ -108,7 +116,7 @@ const UserPage = () => {
       <div className='flex flex-wrap items-center gap-2 sm:gap-5 justify-between'>
         <div className='bg-[rgb(27,30,36)] flex items-center rounded'>
             <IoIosSearch className='text-gray-200 ml-2 text-xl'/>
-          <input className='text-gray-200 outline-none rounded-lg p-1 w-auto sm:w-xs ' type="text" placeholder='Avatar movie...' value={inputSearch}
+          <input className='text-gray-200 outline-none rounded-lg p-1 w-40 sm:w-xs ' type="text" placeholder='Avatar movie...' value={inputSearch}
             onChange={(e) => {
               setInputSearch(e.target.value)
             }} />
@@ -122,7 +130,7 @@ const UserPage = () => {
         </div>
 
         <div>
-          <select className='sm:w-40 px-2 py-2 outline-none text-white rounded-lg p-1 cursor-pointer bg-[rgb(27,30,36)]'
+          <select className='sm:w-40 w-full pr-10 px-2 py-2 outline-none text-white rounded-lg p-1 cursor-pointer bg-[rgb(27,30,36)]'
             value={sort}
             onChange={(e) => {
               setSort(e.target.value)
