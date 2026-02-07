@@ -116,7 +116,7 @@ const UserPage = () => {
       <div className='flex flex-wrap items-center gap-2 sm:gap-5 justify-between'>
         <div className='bg-[rgb(27,30,36)] flex items-center rounded'>
             <IoIosSearch className='text-gray-200 ml-2 text-xl'/>
-          <input className='text-gray-200 outline-none rounded-lg p-1 w-40 sm:w-xs ' type="text" placeholder='Avatar movie...' value={inputSearch}
+          <input className='text-gray-200 outline-none rounded-lg p-1 w-55 sm:w-xs ' type="text" placeholder='Avatar movie...' value={inputSearch}
             onChange={(e) => {
               setInputSearch(e.target.value)
             }} />
